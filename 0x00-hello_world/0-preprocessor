@@ -1,2 +1,8 @@
-#!bin/bash
-gcc $CFILE -E  -o  c
+#!/bin/bash
+if [ -z "$CFILE" ]; then
+    echo "Error: CFILE environment variable not set"
+    exit 1
+fi
+
+gcc -E "$CFILE" -o c
+
